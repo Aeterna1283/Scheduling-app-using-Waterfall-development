@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Scheduling-app-using-Waterfall-development.iml" filepath="$PROJECT_DIR$/.idea/Scheduling-app-using-Waterfall-development.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documentation/documentation.iml" filepath="$PROJECT_DIR$/documentation/documentation.iml" />
     </modules>
   </component>
 </project>
