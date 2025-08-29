@@ -26,41 +26,25 @@ class Main {
 //        // Goodbye message
 //        JOptionPane.showMessageDialog(null, "Thanks for playing! Goodbye!");
 
+        JOptionPane.showMessageDialog(null, "Welcome to the study budy matching system. Please enter the following information");
 
+        JTextField nameField = new JTextField(15);
+        JTextField idField = new JTextField(10);
+        JTextField courseField = new JTextField(15);
+        JTextField timeField = new JTextField(10);
 
-        JOptionPane.showMessageDialog(null, "This is an info message");
-        JOptionPane.showMessageDialog(null, "This is a warning", "Warning", JOptionPane.WARNING_MESSAGE);
-        JOptionPane.showMessageDialog(null, "This is an error", "Error", JOptionPane.ERROR_MESSAGE);
-
-
-        String name = JOptionPane.showInputDialog("Enter your name:");
-
-        int choice = JOptionPane.showConfirmDialog(null, "Do you want to continue?");
-        if (choice == JOptionPane.YES_OPTION) {
-            System.out.println("User chose YES");
-        }
-
-        String[] options = {"Red", "Green", "Blue"};
-        int choice1 = JOptionPane.showOptionDialog(null,
-                "Pick a color:",
-                "Color Picker",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.INFORMATION_MESSAGE,
-                null,
-                options,
-                options[0]);
-
-
-        JTextField nameField = new JTextField(10);
-        JTextField ageField = new JTextField(5);
 
         // Put them in a panel
         JPanel panel = new JPanel();
         panel.add(new JLabel("Name:"));
         panel.add(nameField);
         panel.add(Box.createHorizontalStrut(15)); // spacing
-        panel.add(new JLabel("Age:"));
-        panel.add(ageField);
+        panel.add(new JLabel("ID:"));
+        panel.add(idField);
+        panel.add (new JLabel("Course"));
+        panel.add(courseField);
+        
+
 
         // Show dialog with OK / Cancel buttons
         int result = JOptionPane.showConfirmDialog(
@@ -73,7 +57,7 @@ class Main {
         // Handle result
         if (result == JOptionPane.OK_OPTION) {
             String name1 = nameField.getText();
-            String age = ageField.getText();
+            String age = idField.getText();
             JOptionPane.showMessageDialog(null, "Hello " + name1 + ", you are " + age + " years old.");
         }
 
