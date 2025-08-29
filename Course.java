@@ -29,4 +29,14 @@ public class Course
         return enrolledStudents;
     }
 
+    void addStudent(Student s)
+    {
+        enrolledStudents.add(s);
+    }
+    
+    void removeStudent(Student s)
+    {
+        enrolledStudents.remove(s);
+    }
+
 }
