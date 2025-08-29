@@ -33,7 +33,7 @@ public class Course
     {
         enrolledStudents.add(s);
     }
-    
+
     void removeStudent(Student s)
     {
         enrolledStudents.remove(s);
