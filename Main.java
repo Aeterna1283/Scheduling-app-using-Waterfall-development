@@ -1,72 +1,28 @@
-import javax.swing.JOptionPane;
-import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 class Main {
-    public static void main(String[] args) {
-        // Welcome message
-//        JOptionPane.showMessageDialog(null, "Welcome to the Java Math Quiz!");
-//
-//        // Ask the user a math question
-//        String input = JOptionPane.showInputDialog("What is 7 + 3?");
-//
-//        try {
-//            // Parse the input to an integer
-//            int answer = Integer.parseInt(input);
-//
-//            // Check the answer and respond
-//            if (answer == 10) {
-//                JOptionPane.showMessageDialog(null, "Correct! Great job!");
-//            } else {
-//                JOptionPane.showMessageDialog(null, "you are retarded! The correct answer is 10.");
-//            }
-//        } catch (NumberFormatException e) {
-//            JOptionPane.showMessageDialog(null, "Invalid input! Please enter a number.");
-//        }
-//
-//        // Goodbye message
-//        JOptionPane.showMessageDialog(null, "Thanks for playing! Goodbye!");
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
 
-        JOptionPane.showMessageDialog(null, "Welcome to the study budy matching system. Please enter the following information");
-
-        JTextField nameField = new JTextField(15);
-        JTextField idField = new JTextField(10);
-        JTextField courseField = new JTextField(15);
-        JTextField timeField = new JTextField(10);
-
-
-        // Put them in a panel
-        JPanel panel = new JPanel();
-        panel.add(new JLabel("Name:"));
-        panel.add(nameField);
-        panel.add(Box.createHorizontalStrut(15)); // spacing
-        panel.add(new JLabel("ID:"));
-        panel.add(idField);
-        panel.add (new JLabel("Course"));
-        panel.add(courseField);
-        
-
-
-        // Show dialog with OK / Cancel buttons
-        int result = JOptionPane.showConfirmDialog(
-                null,
-                panel,
-                "Enter your info",
-                JOptionPane.OK_CANCEL_OPTION
-        );
-
-        // Handle result
-        if (result == JOptionPane.OK_OPTION) {
-            String name1 = nameField.getText();
-            String age = idField.getText();
-            JOptionPane.showMessageDialog(null, "Hello " + name1 + ", you are " + age + " years old.");
+        // Collect Student info to send to student
+        System.out.print("Student Name: ");
+        String name = sc.nextLine();
+        String id = sc.nextLine();
+        System.out.print("Student ID: ");
+        List<String> courses = new ArrayList<>();
+        System.out.print("Enter the courses you want a study buddy for:Example CPSC 3720, CPSC 3220 ");
+        String courInput = sc.nextLine();
+        String courArray[] = courInput.split(",");
+        for(String course : courArray)
+        {
+            courses.add(course.trim());
         }
-
-
-
-
-
-
-    }
+        List<String> availability = new ArrayList<>();
+        System.out.print("Times available: 13:00, 15:00, 8:30")
+  }
 }
 
 

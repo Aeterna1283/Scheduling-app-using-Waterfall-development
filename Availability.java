@@ -1,23 +1,24 @@
+import java.util.List;
 import java.util.Objects;
 
 public class Availability
 {
-    private String day;
-    private String startTime;
-    private String endTime;
+    private List<String> day;
+    private List<String> Time;
+//    private String endTime;
     private boolean matched;
 
-    public Availability(String aDay, String aStartTime, String aEndTime, boolean aMatch )
+    public Availability(List<String> aDay, List<String> aTime,/*String aEndTime,*/ boolean aMatch )
     {
         this.day = aDay;
-        this.startTime = aStartTime;
-        this.endTime = aEndTime;
+        this.Time = aTime;
+//        this.endTime = aEndTime;
         this.matched = aMatch;
     }
 
     public boolean avaTime(Availability other)
     {
-        if(other.day.equals(this.day) && other.startTime.equals(this.startTime))
+        if(other.day.equals(this.day) && other.Time.equals(this.Time))
         {
             this.matched = true;
             return true;
@@ -27,20 +28,29 @@ public class Availability
     }
 
 
-    public String getDay()
+    public List<String> getDay()
         {
             return day;
         }
-    public String getStartTime()
+    public List<String> getTime()
     {
-        return startTime;
+        return Time;
     }
-    public String getEndTime()
-    {
-        return endTime;
-    }
+//    public String getEndTime()
+//    {
+//        return endTime;
+//    }
     public boolean getMatched()
     {
         return matched;
     }
+    //    void addAvailability(String time_slots)
+//    {
+//        availability.add(time_slots);
+//    }
+//
+//    void removeAvailability(String time_slots)
+//    {
+//        availability.remove(time_slots);
+//    }
 }
