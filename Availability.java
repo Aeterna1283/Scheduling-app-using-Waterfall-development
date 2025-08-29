@@ -4,21 +4,21 @@ import java.util.Objects;
 public class Availability
 {
     private List<String> day;
-    private List<String> Time;
-//    private String endTime;
+    private List<Integer> startTime;
+    private List<Integer> endTime;
     private boolean matched;
 
-    public Availability(List<String> aDay, List<String> aTime,/*String aEndTime,*/ boolean aMatch )
+    public Availability(List<String> aDay, List<Integer> aStartTime, List <Integer> aEndTime, boolean aMatch )
     {
         this.day = aDay;
-        this.Time = aTime;
-//        this.endTime = aEndTime;
+        this.startTime = aStartTime;
+        this.endTime = aEndTime;
         this.matched = aMatch;
     }
 
     public boolean avaTime(Availability other)
     {
-        if(other.day.equals(this.day) && other.Time.equals(this.Time))
+        if(other.day.equals(this.day) && other.startTime.equals(this.startTime))
         {
             this.matched = true;
             return true;
@@ -32,14 +32,14 @@ public class Availability
         {
             return day;
         }
-    public List<String> getTime()
+    public List<Integer> getStartTime()
     {
-        return Time;
+        return startTime;
     }
-//    public String getEndTime()
-//    {
-//        return endTime;
-//    }
+    public List<Integer> getEndTime()
+    {
+        return endTime;
+    }
     public boolean getMatched()
     {
         return matched;

@@ -20,8 +20,7 @@ class Main {
         {
             courses.add(course.trim());
         }
-        List<String> availability = new ArrayList<>();
-        System.out.print("Times available: 13:00, 15:00, 8:30")
+
   }
 }
 

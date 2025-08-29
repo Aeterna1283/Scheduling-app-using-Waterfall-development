@@ -22,19 +22,16 @@ public class Student
     public String getId()
         {
             return id;
-
         }
 
     public String getName()
     {
         return name;
-
     }
 
     public List<String> getCourse()
     {
         return courses;
-
     }
 
 //    public List<String> getAvail()
@@ -46,7 +43,6 @@ public class Student
     public List<String>getSessions()
     {
         return sessions;
-
     }
 
     void addCourse(String course)
