@@ -1,11 +1,23 @@
-public class Session extends Student
+import java.nio.file.PathMatcher;
+
+public class Session extends Availability
 {
     private String sessionID;
     private String Time;
 
-    public Session(String a_id, String a_name)
-    {
-        super(a_id, a_name);
+    public Session(String aDay, String aStartTime, String aEndTime, boolean aMatch) {
+        super(aDay, aStartTime, aEndTime, aMatch);
     }
+
+    public Session create()
+    {
+       if(avaTime())
+       {
+
+       }
+    }
+
+
 }
-}
+
+
