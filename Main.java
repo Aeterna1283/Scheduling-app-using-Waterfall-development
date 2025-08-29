@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 class Main {
     public static void main(String[] args)
@@ -8,12 +6,12 @@ class Main {
         Scanner sc = new Scanner(System.in);
 
         // Collect Student info to send to student
-        System.out.print("Student Name: ");
+        System.out.println("Student Name: ");
         String name = sc.nextLine();
         String id = sc.nextLine();
-        System.out.print("Student ID: ");
+        System.out.println("Student ID: ");
         List<String> courses = new ArrayList<>();
-        System.out.print("Enter the courses you want a study buddy for:Example CPSC 3720, CPSC 3220 ");
+        System.out.println("Enter the courses you want a study buddy for:Example CPSC 3720, CPSC 3220 ");
         String courInput = sc.nextLine();
         String courArray[] = courInput.split(",");
         for(String course : courArray)
@@ -21,6 +19,18 @@ class Main {
             courses.add(course.trim());
         }
 
+        ArrayList<Integer> times = new ArrayList<>();
+        Map<String, ArrayList<Integer>> dayNtime = new HashMap<>();
+        boolean addTime = true;
+        while(addTime) {
+            System.out.println("Enter a day you can meet with a study budy: Example Monday");
+            String days = sc.nextLine();
+            System.out.println("Enter a start and end time to meet with a study buddy by the hour 1 to 24: Example 13 15");
+            Integer startTime = sc.nextInt();
+            Integer endTime = sc.nextInt();
+            System.out.println("Do you want to add another time: Yes or No");
+            
+        }
   }
 }
 
