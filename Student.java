@@ -9,6 +9,7 @@ public class Student
     private List<String> availability;
     private List<String> sessions;
 
+
     public Student(String a_id, String a_name)
     {
         this.id = a_id;

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MatchMaker
 {
@@ -17,7 +18,35 @@ public class MatchMaker
         }
         return matches;
 
+    }
 
+    public List<Student> suggestMatches(Student current, Course course)
+    {
+        List<Student> matches = new ArrayList<>();
+
+        for(Student stud : course.getEnrolledStudents())
+        {
+            if(stud != current)
+            {
+                for(String slot : current.getAvail())
+                {
+                    for(String slot2 : stud.getAvail())
+                    {
+                        if (Objects.equals(slot, slot2))
+                        {
+                            matches.add(stud);
+                            break;
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        return matches;
 
     }
+
 }
