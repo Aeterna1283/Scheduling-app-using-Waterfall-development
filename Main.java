@@ -51,6 +51,7 @@ class Main {
                 options[0]);
 
 
+        //
         JTextField nameField = new JTextField(10);
         JTextField ageField = new JTextField(5);
 

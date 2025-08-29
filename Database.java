@@ -16,30 +16,30 @@ public class Database
 
         for(Student stud : students)
         {
-            writer.write(stud.getId());
-            writer.write(stud.getName());
+            writer.write(stud.getId() + "|");
+
+            writer.write(stud.getName() + "|");
 
             for(String cor : stud.getCourse())
             {
-                writer.write(cor);
-
+                writer.write(cor + ",");
             }
+            writer.write("|");
 
             for(String avail : stud.getAvail())
             {
-                writer.write(avail);
-
+                writer.write(avail + ",");
             }
+            writer.write("|");
 
             for(String sess : stud.getSessions())
             {
-                writer.write(sess);
-
+                writer.write(sess + ",");
             }
+            writer.write("\n");
         }
 
         writer.close();
-
     }
 
 

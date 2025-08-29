@@ -28,6 +28,7 @@ public class MatchMaker
         {
             if(stud != current)
             {
+                boolean isMatched = false;
                 for(String slot : current.getAvail())
                 {
                     for(String slot2 : stud.getAvail())
@@ -35,11 +36,15 @@ public class MatchMaker
                         if (Objects.equals(slot, slot2))
                         {
                             matches.add(stud);
+                            isMatched = true;
                             break;
 
                         }
                     }
-
+                    if(isMatched)
+                    {
+                        break;
+                    }
                 }
 
             }

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Availability
 {
     private String day;
@@ -13,9 +15,9 @@ public class Availability
         this.matched = aMatch;
     }
 
-    public boolean avaTime(Availability matchDay, Availability matchTime)
+    public boolean avaTime(Availability other)
     {
-        if(matchDay.day == this.day && matchTime.startTime == this.startTime)
+        if(other.day.equals(this.day) && other.startTime.equals(this.startTime))
         {
             this.matched = true;
             return true;

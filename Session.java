@@ -22,7 +22,7 @@ public class Session
         return sessionID;
     }
 
-    public Availability getTimeSlottimeSlot()
+    public Availability getTimeSlot()
     {
         return timeSlot;
     }
