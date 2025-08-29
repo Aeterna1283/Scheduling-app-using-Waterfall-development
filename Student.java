@@ -10,7 +10,7 @@ public class Student
     private List<String> sessions;
 
 
-    public Student(String a_id, String a_name)
+    public Student(String a_id, String a_name, List<String> aCourses)
     {
         this.id = a_id;
         this.name = a_name;
