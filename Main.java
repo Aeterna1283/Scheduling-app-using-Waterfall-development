@@ -1,5 +1,8 @@
-public class Main
+import javax.swing.JOptionPane;
+public static void main(String [] args)
 {
+    JOptionPane.showMessageDialog(null, "HI im mr poopy pants");
+}
 
 
 
@@ -34,4 +37,4 @@ public class Main
 //    ON Exit
 //    SAVE students to Database
 
-}
+
