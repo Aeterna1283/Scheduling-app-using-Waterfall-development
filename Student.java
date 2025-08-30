@@ -69,6 +69,11 @@ public class Student
         }
     }
 
+    public HashMap<String, ArrayList<Integer>> getAvailability()
+    {
+        return availability;
+    }
+
     void removeAvailability(String time_slots)
     {
         availability.remove(time_slots);
