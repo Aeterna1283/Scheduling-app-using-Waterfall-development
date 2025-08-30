@@ -4,7 +4,7 @@ class Main {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-
+        //Documentation will serve as our input handling, lets not wast time with input validation
         // Collect Student info to send to student
         System.out.println("Student Name: ");
         String name = sc.nextLine();
@@ -25,13 +25,22 @@ class Main {
         while(addTime) {
             System.out.println("Enter a day you can meet with a study budy: Example Monday");
             String days = sc.nextLine();
-            System.out.println("Enter a start and end time to meet with a study buddy by the hour 1 to 24: Example 13 15");
+            System.out.println("Enter a start and end time to meet with a study buddy by the hour 0 to 23: Example 13 15");
             Integer startTime = sc.nextInt();
             Integer endTime = sc.nextInt();
+            times.add(startTime);
+            times.add(endTime);
+            dayNtime.put(days,times);
             System.out.println("Do you want to add another time: Yes or No");
-            
+            String logic = sc.nextLine();
+            if(logic.equalsIgnoreCase("no"))
+            {
+                addTime = false;
+            }
+            else{
+                }
         }
-  }
+    }
 }
 
 
