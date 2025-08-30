@@ -44,13 +44,13 @@ public class Availability
     {
         return matched;
     }
-    //    void addAvailability(String time_slots)
-//    {
-//        availability.add(time_slots);
-//    }
-//
-//    void removeAvailability(String time_slots)
-//    {
-//        availability.remove(time_slots);
-//    }
+        void addAvailability(String time_slots)
+    {
+        availability.add(time_slots);
+    }
+
+    void removeAvailability(String time_slots)
+    {
+        availability.remove(time_slots);
+    }
 }

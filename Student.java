@@ -6,7 +6,7 @@ public class Student
     private String id;
     private String name;
     private List<String> courses;
-    //private List<String> availability;
+    private HashMap<String, ArrayList<Integer>> availability;
     private List<String> sessions;
 
 
@@ -15,7 +15,7 @@ public class Student
         this.id = a_id;
         this.name = a_name;
         this.courses = new ArrayList<>();
-        //this.availability = new ArrayList<>();
+        this.availability = new ArrayList<>();
         this.sessions = new ArrayList<>();
     }
 
@@ -50,15 +50,19 @@ public class Student
        courses.add(course);
     }
 
-//    void addAvailability(String time_slots)
-//    {
-//        availability.add(time_slots);
-//    }
-//
-//    void removeAvailability(String time_slots)
-//    {
-//        availability.remove(time_slots);
-//    }
+    void addAvailability(String day, Integer sTime, Integer fTime)
+    {
+        availability.add(day);
+        for (int i = 1; i < (fTime - sTime); i++)
+        {
+
+        }
+    }
+
+    void removeAvailability(String time_slots)
+    {
+        availability.remove(time_slots);
+    }
 
     void addSession(String sess)
     {
