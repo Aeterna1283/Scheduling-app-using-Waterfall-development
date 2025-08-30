@@ -6,17 +6,19 @@ public class Student
     private String id;
     private String name;
     private List<String> courses;
+    private Availability availability;
     //private List<String> availability;
-    private List<String> sessions;
+    //private List<String> sessions;
 
 
-    public Student(String a_id, String a_name, List<String> aCourses)
+    public Student(String a_id, String a_name, List<String> aCourses, Availability theAvailability)
     {
         this.id = a_id;
         this.name = a_name;
         this.courses = new ArrayList<>();
+        this.availability = theAvailability;
         //this.availability = new ArrayList<>();
-        this.sessions = new ArrayList<>();
+        //this.sessions = new ArrayList<>();
     }
 
     public String getId()
@@ -39,11 +41,11 @@ public class Student
 //        return availability;
 //
 //    }
-
-    public List<String>getSessions()
-    {
-        return sessions;
-    }
+//
+//    public List<String>getSessions()
+//    {
+//        return sessions;
+//    }
 
     void addCourse(String course)
     {
@@ -60,9 +62,9 @@ public class Student
 //        availability.remove(time_slots);
 //    }
 
-    void addSession(String sess)
-    {
-        sessions.add(sess);
-    }
+//    void addSession(String sess)
+//    {
+//        sessions.add(sess);
+//    }
 
 }

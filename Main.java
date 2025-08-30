@@ -20,7 +20,7 @@ class Main {
         }
 
         ArrayList<Integer> times = new ArrayList<>();
-        Map<String, ArrayList<Integer>> dayNtime = new HashMap<>();
+        HashMap<String, ArrayList<Integer>> dayNtime = new HashMap<>();
         boolean addTime = true;
         while(addTime) {
             System.out.println("Enter a day you can meet with a study budy: Example Monday");
@@ -39,8 +39,9 @@ class Main {
             }
         }
 
-        Student profile1 = new Student(id,name,courses);
-        Availability Student1 = new Availability(dayNtime);
+        Availability aSchedule = new Availability(dayNtime);
+        Student aProfile1 = new Student(id,name,courses,aSchedule);
+
 
         System.out.println("Would any more student like to find a study buddy?: Yes or No");
         String reRun = sc.nextLine();
