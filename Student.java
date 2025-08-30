@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Student
@@ -7,7 +8,7 @@ public class Student
     private String name;
     private List<String> courses;
     private HashMap<String, ArrayList<Integer>> availability;
-    private List<String> sessions;
+//    private List<String> sessions;
 
 
     public Student(String a_id, String a_name, List<String> aCourses)
@@ -15,8 +16,8 @@ public class Student
         this.id = a_id;
         this.name = a_name;
         this.courses = new ArrayList<>();
-        this.availability = new ArrayList<>();
-        this.sessions = new ArrayList<>();
+        this.availability = new HashMap<>();
+//        this.sessions = new ArrayList<>();
     }
 
     public String getId()
@@ -40,10 +41,10 @@ public class Student
 //
 //    }
 
-    public List<String>getSessions()
-    {
-        return sessions;
-    }
+//    public List<String>getSessions()
+//    {
+//        return sessions;
+//    }
 
     void addCourse(String course)
     {

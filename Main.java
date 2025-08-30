@@ -39,8 +39,8 @@ class Main {
             }
         }
 
-        Student profile1 = new Student(id,name,courses);
-        Availability Student1 = new Availability(dayNtime);
+        Student profile1 = new Student(id,name,courses,dayNtime);
+//        Availability Student1 = new Availability(dayNtime);
 
         System.out.println("Would any more student like to find a study buddy?: Yes or No");
         String reRun = sc.nextLine();
