@@ -19,18 +19,16 @@ class Main {
             courses.add(course.trim());
         }
 
-        ArrayList<Integer> times = new ArrayList<>();
-        Map<String, ArrayList<Integer>> dayNtime = new HashMap<>();
+        Student profile = new Student(id,name,courses);
+
         boolean addTime = true;
         while(addTime) {
             System.out.println("Enter a day you can meet with a study budy: Example Monday");
-            String days = sc.nextLine();
+            String day = sc.nextLine();
             System.out.println("Enter a start and end time to meet with a study buddy by the hour 0 to 23: Example 13 15");
             Integer startTime = sc.nextInt();
             Integer endTime = sc.nextInt();
-            times.add(startTime);
-            times.add(endTime);
-            dayNtime.put(days,times);
+            profile.addAvailability(day, startTime, endTime);
             System.out.println("Do you want to add another time: Yes or No");
             String logic = sc.nextLine();
             if(logic.equalsIgnoreCase("no"))
@@ -39,8 +37,6 @@ class Main {
             }
         }
 
-        Student profile1 = new Student(id,name,courses,dayNtime);
-//        Availability Student1 = new Availability(dayNtime);
 
         System.out.println("Would any more student like to find a study buddy?: Yes or No");
         String reRun = sc.nextLine();

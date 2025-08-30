@@ -35,11 +35,6 @@ public class Student
         return courses;
     }
 
-//    public List<String> getAvail()
-//    {
-//        return availability;
-//
-//    }
 
 //    public List<String>getSessions()
 //    {
