@@ -37,8 +37,21 @@ class Main {
             {
                 addTime = false;
             }
-            else{
-                }
+        }
+
+        Student profile1 = new Student(id,name,courses);
+        Availability Student1 = new Availability(dayNtime);
+
+        System.out.println("Would any more student like to find a study buddy?: Yes or No");
+        String reRun = sc.nextLine();
+        if (reRun.equalsIgnoreCase("yes"));
+        {
+            main(args);
+        }
+        if(reRun.equalsIgnoreCase("no"))
+        {
+            System.out.println("BYE!");
+            System.exit(0);
         }
     }
 }
