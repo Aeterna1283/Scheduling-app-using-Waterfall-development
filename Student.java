@@ -53,10 +53,19 @@ public class Student
 
     void addAvailability(String day, Integer sTime, Integer fTime)
     {
-        availability.add(day);
-        for (int i = 1; i < (fTime - sTime); i++)
+        ArrayList<Integer> hours = new ArrayList<>();
+        for (int i = sTime; i < fTime; i++)
         {
-
+            hours.add(i);
+        }
+        if (availability.containsKey(day))
+        {
+            ArrayList<Integer> temp = availability.get(day);
+            hours.retainAll(temp);
+            availability.get(day).addAll(hours);
+        } else
+        {
+            availability.put(day, hours);
         }
     }
 
