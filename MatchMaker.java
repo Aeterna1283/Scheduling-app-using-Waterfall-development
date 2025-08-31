@@ -19,7 +19,9 @@ public class MatchMaker {
                 Student s2 = allStudents.get(j);
                 for (String course : s1.getCourse()) {
                     if (s2.getCourse().contains(course)) {
-                        System.out.println(s1.getName() + " and " + s2.getName() + " can study together for " + course);
+                        ArrayList<String> temp = new ArrayList<>(s2.getCourse());
+                        temp.retainAll(s1.getCourse());
+                        System.out.println(s1.getName() + " and " + s2.getName() + " can study together for " + temp);
                         checkAvailability(s1, s2);
                         // avoiding duplicate checks
                         break;
