@@ -9,23 +9,18 @@ public class MatchMaker {
     public MatchMaker(ArrayList<Student> all)
     {
         this.allStudents = all;
-        System.out.println("1");
     };
 
     public void checkCourses() {
-        System.out.println("2");
         for (int i = 0; i < allStudents.size(); ++i) {
             Student s1 = allStudents.get(i);
 
             for (int j = i + 1; j < allStudents.size(); ++j) {
                 Student s2 = allStudents.get(j);
-                System.out.println("3");
                 for (String course : s1.getCourse()) {
-                    System.out.println("4");
                     if (s2.getCourse().contains(course)) {
                         System.out.println(s1.getName() + " and " + s2.getName() + " can study together for " + course);
                         checkAvailability(s1, s2);
-                        System.out.println("5");
                         // avoiding duplicate checks
                         break;
                     }

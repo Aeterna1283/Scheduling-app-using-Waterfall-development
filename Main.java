@@ -23,10 +23,9 @@ class Main {
                 // Collect Student info to send to student
                 System.out.println("Student Name: ");
                 String name = sc.nextLine();
-                sc.nextLine();
                 System.out.println("Student ID: ");
                 String id = sc.nextLine();
-                List<String> courses = new ArrayList<>();
+                ArrayList<String> courses = new ArrayList<>();
                 System.out.println("Enter the courses you want a study buddy for:Example CPSC 3720, CPSC 3220 ");
                 String courInput = sc.nextLine();
                 String courArray[] = courInput.split(",");

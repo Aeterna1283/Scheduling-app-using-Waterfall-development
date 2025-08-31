@@ -6,16 +6,16 @@ public class Student
 {
     private String id;
     private String name;
-    private List<String> courses;
+    private ArrayList<String> courses;
     private HashMap<String, ArrayList<Integer>> availability;
     private HashMap<String, ArrayList<Integer>> sessions;
 
 
-    public Student(String a_id, String a_name, List<String> aCourses)
+    public Student(String a_id, String a_name, ArrayList<String> aCourses)
     {
         this.id = a_id;
         this.name = a_name;
-        this.courses = new ArrayList<>();
+        this.courses = aCourses;
         this.availability = new HashMap<>();
         this.sessions = new HashMap<>();
     }
@@ -30,7 +30,7 @@ public class Student
         return name;
     }
 
-    public List<String> getCourse()
+    public ArrayList<String> getCourse()
     {
         return courses;
     }
