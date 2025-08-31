@@ -1,8 +1,10 @@
 import java.io.*;
 import java.util.List;
 
-//public class Database
-//{
+public class Database {
+
+}
+
 //    private String filename;
 //
 //    Database(String fn)
@@ -42,7 +44,7 @@ import java.util.List;
 //        writer.close();
 //    }
 //
-
-
-    
-}
+//
+//
+//
+//}
