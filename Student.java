@@ -75,9 +75,9 @@ public class Student
                 return;
             }
             availability.get(day).removeAll(hours);
+            return;
         }
         System.out.println("There is no availability on " + day);
-        return;
     }
 
     public HashMap<String, ArrayList<Integer>> getAvailability()
@@ -85,10 +85,6 @@ public class Student
         return availability;
     }
 
-    void removeAvailability(String time_slots)
-    {
-        availability.remove(time_slots);
-    }
 
     void addSession(String day, Integer sTime)
     {

@@ -10,9 +10,9 @@ class Main {
         Student profile = null;
         Scanner sc = new Scanner(System.in);
         Integer menu;
-        System.out.println("Welcome to Study Buddy");
+        System.out.println("\nWelcome to Study Buddy");
         System.out.println("If you want add a new profile please press 1");
-        System.out.println("If you want to access an existing prifile press 2");
+        System.out.println("If you want to access an existing profile press 2");
         System.out.println("If you want to exit press 3");
         menu = sc.nextInt();
         sc.nextLine();
@@ -72,8 +72,11 @@ class Main {
                     System.out.println("There is no student with that ID.");
                     main(args);
                 }
+                System.out.println(profile.getName() + " has availability on " + profile.getAvailability());
 
-                System.out.println(profile.getAvailability());
+                if(!profile.getSessions().isEmpty()){
+                    System.out.println(profile.getName() + " has sessions on " + profile.getSessions());
+                }
 
                 System.out.println("Do you want to add availability?");
                 String inAns = sc.nextLine();

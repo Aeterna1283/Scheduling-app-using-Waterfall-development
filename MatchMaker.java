@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class MatchMaker {
     private ArrayList<Student> allStudents = new ArrayList<>();
@@ -44,11 +41,27 @@ public class MatchMaker {
             }
         }
         if (overlap.isEmpty()) {
-            System.out.println("No study buddies available");
+            System.out.println("No availability");
         } else {
             for (String print : overlap.keySet()) {
                 System.out.println(print + " ->" + overlap.get(print));
             }
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Do you want to make a session? Yes or No");
+            String choice = sc.nextLine();
+            if(choice.equalsIgnoreCase("yes")) {
+                System.out.println("Choose a day for a study session from " + overlap.keySet());
+                choice = sc.nextLine();
+                System.out.println("Choose a starting time from " + choice + ": " + overlap.get(choice));
+                Integer ichoice = sc.nextInt();
+                s1.addSession(choice, ichoice);
+                s2.addSession(choice, ichoice);
+                s1.removeAvailability(choice, ichoice, ichoice+1);
+                s2.removeAvailability(choice, ichoice, ichoice+1);
+                System.out.println("Session made for " + choice + " at " + ichoice + " for " + s1.getName() + " and " +
+                        s2.getName());
+            }
+
         }
     }
 
