@@ -64,6 +64,27 @@ public class Student
         }
     }
 
+    void removeAvailability(String day, Integer sTime, Integer fTime)
+    {
+        ArrayList<Integer> hours = new ArrayList<>();
+        for (int i = sTime; i < fTime; i++)
+        {
+            hours.add(i);
+        }
+        if (availability.containsKey(day))
+        {
+            hours.retainAll(availability.get(day));
+            if(hours.isEmpty())
+            {
+                System.out.println("There is no availability to remove for that time.");
+                return;
+            }
+            availability.get(day).removeAll(hours);
+        }
+        System.out.println("There is no availability on " + day);
+        return;
+    }
+
     public HashMap<String, ArrayList<Integer>> getAvailability()
     {
         return availability;
