@@ -22,6 +22,7 @@ class Main {
                 // Collect Student info to send to student
                 System.out.println("Student Name: ");
                 String name = sc.nextLine();
+                sc.nextLine();
                 System.out.println("Student ID: ");
                 String id = sc.nextLine();
                 List<String> courses = new ArrayList<>();
@@ -94,7 +95,7 @@ class Main {
 
         System.out.println("Do you want to find a sessions?");
         String reRun = sc.nextLine();
-        if (reRun.equalsIgnoreCase("no"));
+        if (reRun.equalsIgnoreCase("no"))
         {
             main(args);
         }
@@ -106,7 +107,7 @@ class Main {
                 main(args);
             }
             MatchMaker matches = new MatchMaker(students);
-
+            matches.checkCourses();
 
             main(args);
         }
