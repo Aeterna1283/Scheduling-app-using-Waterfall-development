@@ -109,7 +109,6 @@ class Main {
             }
             MatchMaker matches = new MatchMaker(students);
             matches.checkCourses();
-
             main(args);
         }
     }
