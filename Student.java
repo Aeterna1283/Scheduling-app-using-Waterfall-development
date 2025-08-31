@@ -55,7 +55,7 @@ public class Student
         }
         if (availability.containsKey(day))
         {
-            ArrayList<Integer> temp = availability.get(day);
+            ArrayList<Integer> temp = new ArrayList<>(availability.get(day));
             hours.retainAll(temp);
             availability.get(day).addAll(hours);
         } else
