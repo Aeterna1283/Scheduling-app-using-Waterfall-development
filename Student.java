@@ -8,7 +8,7 @@ public class Student
     private String name;
     private List<String> courses;
     private HashMap<String, ArrayList<Integer>> availability;
-//    private List<String> sessions;
+    private HashMap<String, ArrayList<Integer>> sessions;
 
 
     public Student(String a_id, String a_name, List<String> aCourses)
@@ -35,11 +35,6 @@ public class Student
         return courses;
     }
 
-
-//    public List<String>getSessions()
-//    {
-//        return sessions;
-//    }
 
     void addCourse(String course)
     {
@@ -95,9 +90,46 @@ public class Student
         availability.remove(time_slots);
     }
 
-    void addSession(String sess)
+    void addSession(String day, Integer sTime)
     {
-        sessions.add(sess);
+        {
+
+            if (sessions.containsKey(day))
+            {
+                if(sessions.get(day).contains(sTime))
+                {
+                    System.out.println("You Already have a session at that time.");
+                    return;
+                }
+                sessions.get(day).add(sTime);
+            } else
+            {
+                ArrayList<Integer> temp = new ArrayList<>();
+                temp.add(sTime);
+                sessions.put(day, temp);
+            }
+        }
     }
+
+    void removeSessions(String day, Integer time)
+    {
+        if (sessions.containsKey(day))
+        {
+            if(sessions.get(day).contains(time))
+            {
+                sessions.get(day).remove(time);
+                return;
+            }
+        }
+        {
+            System.out.println("There is no Session at that time.");
+        }
+    }
+
+    public HashMap<String, ArrayList<Integer>> getSessions()
+    {
+        return sessions;
+    }
+
 
 }
