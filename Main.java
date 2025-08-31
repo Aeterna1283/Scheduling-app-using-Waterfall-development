@@ -15,6 +15,7 @@ class Main {
         System.out.println("If you want to access an existing prifile press 2");
         System.out.println("If you want to exit press 3");
         menu = sc.nextInt();
+        sc.nextLine();
 
         switch (menu) {
             case 1:
