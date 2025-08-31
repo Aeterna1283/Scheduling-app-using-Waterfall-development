@@ -10,16 +10,24 @@ public class MatchMaker
 
 
 
-    public void checkCourse(Student s1, Student s2) {
-        for (String course : s1.getCourse())
+    public void checkCourses() {
+        for (int i = 0; i < allStudents.size(); ++i)
         {
-            if (s2.getCourse().contains(course))
+            Student s1 = allStudents.get(i);
+
+            for(int j = i + 1; j < allStudents.size(); ++j)
             {
-                checkAvailability(s1,s2);
-                return;
+                Student s2 = allStudents.get(j);
+
+                for(String course : s1.getCourse())
+                {
+                    if(s2.getCourse().contains(course))
+                    {
+                        checkAvailability(s1,s2);
+                    }
+                }
             }
         }
-
     }
 
     public void checkAvailability(Student s1, Student s2)
@@ -34,6 +42,7 @@ public class MatchMaker
                 if(!Times.isEmpty())
                 {
                   overlap.put(day,Times);
+                  System.out.println("No study buddies available");
                 }
             }
 
