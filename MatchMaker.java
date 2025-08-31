@@ -5,10 +5,9 @@ import java.util.Objects;
 
 public class MatchMaker
 {
-
     private ArrayList<Student> allStudents = new ArrayList<>();
 
-
+    public MatchMaker() {};
 
     public void checkCourses() {
         for (int i = 0; i < allStudents.size(); ++i)
@@ -23,7 +22,10 @@ public class MatchMaker
                 {
                     if(s2.getCourse().contains(course))
                     {
+                        System.out.println(s1.getName() + " and " + s2.getName() + " can study together for " + course);
                         checkAvailability(s1,s2);
+                        // avoiding duplicate checks
+                        break;
                     }
                 }
             }
@@ -32,6 +34,7 @@ public class MatchMaker
 
     public void checkAvailability(Student s1, Student s2)
     {
+        System.out.println("Avaiability between " + s1.getName() + " and " + s2.getName());
         HashMap<String,ArrayList<Integer>> overlap = new HashMap<>();
         for(String day : s1.getAvailability().keySet())
         {
@@ -42,14 +45,17 @@ public class MatchMaker
                 if(!Times.isEmpty())
                 {
                   overlap.put(day,Times);
-                  System.out.println("No study buddies available");
                 }
             }
-
         }
-        for(String print : overlap.keySet())
+        if(overlap.isEmpty())
         {
-            System.out.println(print + " ->" + overlap.get(print));
+            System.out.println("No study buddies available");
+        }
+        else {
+            for (String print : overlap.keySet()) {
+                System.out.println(print + " ->" + overlap.get(print));
+            }
         }
     }
 
