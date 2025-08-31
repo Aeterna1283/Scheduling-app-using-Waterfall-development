@@ -41,7 +41,7 @@ class Main {
         }
         students.add(profile);
 
-        System.out.println("Would any more student like to find a study buddy?: Yes or No");
+        System.out.println("Would any more students like to find a study buddy?: Yes or No");
         String reRun = sc.nextLine();
         if (reRun.equalsIgnoreCase("yes"));
         {

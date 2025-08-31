@@ -6,10 +6,7 @@ import java.util.Objects;
 public class MatchMaker {
     private ArrayList<Student> allStudents = new ArrayList<>();
 
-    public MatchMaker() {
-    }
-
-    ;
+    public MatchMaker() {};
 
     public void checkCourses() {
         for (int i = 0; i < allStudents.size(); ++i) {
@@ -31,7 +28,7 @@ public class MatchMaker {
     }
 
     public void checkAvailability(Student s1, Student s2) {
-        System.out.println("Avaiability between " + s1.getName() + " and " + s2.getName());
+        System.out.println("Availability between " + s1.getName() + " and " + s2.getName());
         HashMap<String, ArrayList<Integer>> overlap = new HashMap<>();
         for (String day : s1.getAvailability().keySet()) {
             if (s2.getAvailability().containsKey(day)) {
