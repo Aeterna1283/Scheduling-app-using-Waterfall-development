@@ -1,0 +1,58 @@
++--------------------------------------+
+|               Main                   |
++--------------------------------------+
+| - students : ArrayList<Student>      |
++--------------------------------------+
+| + main(args: String[]) : void        |
+| - addingAvail(stud: Student) : void  |
+| - removeAvail(stud: Student) : void  |
++--------------------------------------+
+
+                 uses
+                   |
+                   v
++--------------------------------------+
+|              Student                 |
++--------------------------------------+
+| - id : String                        |
+| - name : String                      |
+| - courses : ArrayList<String>        |
+| - availability : HashMap<String,     |
+|                 ArrayList<Integer>>  |
+| - sessions : HashMap<String,         |
+|              ArrayList<Integer>>     |
++--------------------------------------+
+| + Student(a_id: String,              |
+|           a_name: String,            |
+|           aCourses: ArrayList<String>)|
+| + getId() : String                   |
+| + getName() : String                 |
+| + getCourse() : ArrayList<String>    |
+| + getAvailability() : HashMap<String,|
+|                  ArrayList<Integer>> |
+| + getSessions() : HashMap<String,    |
+|                   ArrayList<Integer>>|
+| + addCourse(course: String) : void   |
+| + addAvailability(day: String,       |
+|                   sTime: Integer,    |
+|               fTime: Integer) : void |
+| + removeAvailability(day: String,    |
+|                      sTime: Integer, |
+|               fTime: Integer) : void |
+| + addSession(day: String, sTime: Integer) : void |
+| + removeSessions(day: String, time: Integer) : void |
++--------------------------------------+
+
+                 used by
+                   ^
+                   |
++--------------------------------------+
+|             MatchMaker               |
++--------------------------------------+
+| - allStudents : ArrayList<Student>   |
++--------------------------------------+
+| + MatchMaker(all: ArrayList<Student>)|
+| + checkCourses() : void              |
+| + checkAvailability(s1: Student,     |
+|                  s2: Student) : void |
++--------------------------------------+

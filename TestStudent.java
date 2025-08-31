@@ -54,19 +54,19 @@ public class TestStudent
     }
 
     @Test
-    void testPreventDuplicateSession() {
-            student.addSession("Thursday", 14);
-            student.addSession("Thursday", 14); // duplicate
-
-            assertEquals(1, student.getSessions().get("Thursday").size());
-        }
-
-        @Test
-        void testRemoveSessions() {
-            student.addSession("Friday", 8);
-            student.removeSessions("Friday", 8);
-
-            assertTrue(student.getSessions().get("Friday").isEmpty());
-        }
+    void testPreventDuplicateSession()
+    {
+        student.addSession("Thursday", 14);
+        student.addSession("Thursday", 14); // duplicate
+        assertEquals(1, student.getSessions().get("Thursday").size());
     }
+
+    @Test
+    void testRemoveSessions()
+    {
+        student.addSession("Friday", 8);
+        student.removeSessions("Friday", 8);
+        assertTrue(student.getSessions().get("Friday").isEmpty());
+    }
+}
 
