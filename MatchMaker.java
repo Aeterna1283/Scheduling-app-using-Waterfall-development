@@ -31,11 +31,11 @@ public class MatchMaker
                   overlap.put(day,Times);
                 }
             }
-        for(day : overlap.keySet())
-        {
-            
-        }
 
+        }
+        for(String print : overlap.keySet())
+        {
+            System.out.println(print + " ->" + overlap.get(print));
         }
     }
 
