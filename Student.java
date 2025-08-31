@@ -17,7 +17,7 @@ public class Student
         this.name = a_name;
         this.courses = new ArrayList<>();
         this.availability = new HashMap<>();
-//        this.sessions = new ArrayList<>();
+        this.sessions = new HashMap<>();
     }
 
     public String getId()
