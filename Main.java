@@ -22,7 +22,6 @@ class Main {
         }
 
         Student profile = new Student(id,name,courses);
-        students.add(profile);
 
         boolean addTime = true;
         while(addTime) {
@@ -31,6 +30,7 @@ class Main {
             System.out.println("Enter a start and end time to meet with a study buddy by the hour 0 to 23: Example 13 15");
             Integer startTime = sc.nextInt();
             Integer endTime = sc.nextInt();
+            sc.nextLine();
             profile.addAvailability(day, startTime, endTime);
             System.out.println("Do you want to add another time: Yes or No");
             String logic = sc.nextLine();
@@ -39,7 +39,7 @@ class Main {
                 addTime = false;
             }
         }
-
+        students.add(profile);
 
         System.out.println("Would any more student like to find a study buddy?: Yes or No");
         String reRun = sc.nextLine();
