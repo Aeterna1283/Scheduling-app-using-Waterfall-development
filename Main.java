@@ -1,6 +1,8 @@
 import java.util.*;
 
+
 class Main {
+    public static ArrayList<Student> students = new ArrayList<>();
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
@@ -20,6 +22,7 @@ class Main {
         }
 
         Student profile = new Student(id,name,courses);
+        students.add(profile);
 
         boolean addTime = true;
         while(addTime) {
