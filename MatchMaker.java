@@ -5,6 +5,11 @@ import java.util.Objects;
 
 public class MatchMaker
 {
+
+    private ArrayList<Student> allStudents = new ArrayList<>();
+
+
+
     public void checkCourse(Student s1, Student s2) {
         for (String course : s1.getCourse())
         {
