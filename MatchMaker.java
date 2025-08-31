@@ -6,7 +6,10 @@ import java.util.Objects;
 public class MatchMaker {
     private ArrayList<Student> allStudents = new ArrayList<>();
 
-    public MatchMaker() {};
+    public MatchMaker(ArrayList<Student> all)
+    {
+        this.allStudents = all;
+    };
 
     public void checkCourses() {
         for (int i = 0; i < allStudents.size(); ++i) {
