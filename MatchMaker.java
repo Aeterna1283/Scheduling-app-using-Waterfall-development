@@ -1,57 +1,93 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
 public class MatchMaker
 {
-    public List<Student> searchFriends(Student current, Course course)
-    {
-        List<Student> matches = new ArrayList<>();
-
-        for(Student stud : course.getEnrolledStudents())
+    public void checkCourse(Student s1, Student s2) {
+        for (String course : s1.getCourse())
         {
-            if (stud != current)
+            if (s2.getCourse().contains(course))
             {
-                matches.add(stud);
+                checkAvailability(s1,s2);
+                return;
             }
-
         }
-        return matches;
 
     }
 
-    public List<Student> suggestMatches(Student current, Course course)
+    public void checkAvailability(Student s1, Student s2)
     {
-        List<Student> matches = new ArrayList<>();
-
-        for(Student stud : course.getEnrolledStudents())
+        HashMap<String,ArrayList<Integer>> overlap = new HashMap<>();
+        for(String day : s1.getAvailability().keySet())
         {
-            if(stud != current)
+            if(s2.getAvailability().containsKey(day))
             {
-                boolean isMatched = false;
-                for(String slot : current.getAvail())
+                ArrayList<Integer> Times = new ArrayList<>(s1.getAvailability().get(day));
+                Times.retainAll(s2.getAvailability().get(day));
+                if(!Times.isEmpty())
                 {
-                    for(String slot2 : stud.getAvail())
-                    {
-                        if (Objects.equals(slot, slot2))
-                        {
-                            matches.add(stud);
-                            isMatched = true;
-                            break;
-
-                        }
-                    }
-                    if(isMatched)
-                    {
-                        break;
-                    }
+                  overlap.put(day,Times);
                 }
-
             }
+        for(day : overlap.keySet())
+        {
+            
+        }
 
         }
-        return matches;
-
     }
+
+
+    //    public List<Student> searchFriends(Student current, Course course)
+//    {
+//        List<Student> matches = new ArrayList<>();
+//
+//        for(Student stud : course.getEnrolledStudents())
+//        {
+//            if (stud != current)
+//            {
+//                matches.add(stud);
+//            }
+//
+//        }
+//        return matches;
+//
+//    }
+//
+//    public List<Student> suggestMatches(Student current, Course course)
+//    {
+//        List<Student> matches = new ArrayList<>();
+//
+//        for(Student stud : course.getEnrolledStudents())
+//        {
+//            if(stud != current)
+//            {
+//                boolean isMatched = false;
+//                for(String slot : current.getAvail())
+//                {
+//                    for(String slot2 : stud.getAvail())
+//                    {
+//                        if (Objects.equals(slot, slot2))
+//                        {
+//                            matches.add(stud);
+//                            isMatched = true;
+//                            break;
+//
+//                        }
+//                    }
+//                    if(isMatched)
+//                    {
+//                        break;
+//                    }
+//                }
+//
+//            }
+//
+//        }
+//        return matches;
+//
+//    }
 
 }
